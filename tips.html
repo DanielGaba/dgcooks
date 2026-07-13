@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советы и рекомендации — Кулинарный гид</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для красивого отображения базы знаний */
+        .tips-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tips-section:last-of-type {
+            border-bottom: none;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .tip-card {
+            background-color: #fcfbfa;
+            border-left: 4px solid var(--accent-light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .tip-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-light);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="max-width: 700px; margin: 2rem auto; padding: 2rem; background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        
+        <span class="category-badge" style="display: inline-block; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-light); font-weight: bold; margin-bottom: 0.5rem;">Личная база знаний</span>
+        
+        <h1 style="margin-top: 0; padding-bottom: 0.5rem; border-bottom: 3px solid var(--accent-light); color: var(--text-color);">💡 Советы и рекомендации</h1>
+        
+        <p style="color: #666; font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem;">
+            Добро пожаловать в кулинарный гид! Здесь собраны базовые правила, секреты шеф-поваров и полезные лайфхаки, которые помогут сделать процесс приготовления простым, а результат — предсказуемо идеальным.
+        </p>
+
+        <section class="tips-section">
+            <h2 class="section-title">🍷 Вино и напитки (Эногастрономия)</h2>
+            
+            <div class="tip-card">
+                <h3>Основы фудпейринга</h3>
+                <p>Главное правило — баланс веса и интенсивности. К лёгким блюдам (салаты, белая рыба) подают лёгкие вина. К сытным и жирным (стейки, рагу) — плотные, танинные красные вина, которые «пробивают» текстуру мяса.</p>
+            </div>
+
+            <div class="tip-card">
+                <h3>Температура подачи</h3>
+                <p>Никогда не подавайте красное вино тёплым («комнатной температуры» старых замков — это 16–18°C). Белые и игристые вина требуют хорошего охлаждения (8–12°C), чтобы раскрыть свою кислотность и свежесть.</p>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2 class="section-title">🍳 Посуда и кухонная утварь</h2>
+            
+            <div class="tip-card">
+                <h3>Уход за чугунной сковородой</h3>
+                <p>Чугун не любит влагу. После мытья обязательно вытрите сковороду насухо, прогрейте на плите полминуты и смажьте тончайшим слоем растительного масла. Смывать мылом — только в крайних случаях, чтобы не повредить естественный антипригарный слой.</p>
+            </div>
+
+            <div class="tip-card">
+                <h3>Выбор правильных ножей</h3>
+                <p>На кухне не нужен набор из 20 предметов. Достаточно «поварской тройки»: большой шеф-нож (для всего), средний универсальный (для нарезки гастрономии) и маленький овощной. Главное — держать их всегда острыми.</p>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2 class="section-title">🔌 Техника и гаджеты</h2>
+            
+            <div class="tip-card">
+                <h3>Лайфхаки по работе с аэрогрилем</h3>
+                <p>Аэрогриль готовит за счёт мощного обдува горячим воздухом. Не забивайте чашу доверху — продуктам нужно пространство для циркуляции. Чтобы получить идеальную корочку без пересушивания, слегка сбрызните еду маслом из распылителя.</p>
+            </div>
+
+            <div class="tip-card">
+                <h3>Конвекция в духовке</h3>
+                <p>Режим конвекции идеален для запекания мяса, птицы и получения хрустящей корочки. Однако для нежной выпечки (бисквиты, суфле) конвекцию лучше отключать или использовать осторожно, чтобы не пересушить текстуру раньше времени.</p>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2 class="section-title">💡 Кулинарные лайфхаки</h2>
+            
+            <div class="tip-card">
+                <h3>Как правильно хранить зелень</h3>
+                <p>Относитесь к свежей зелени как к цветам: подрежьте стебли и поставьте пучок в стакан с холодной водой. Сверху накройте полиэтиленовым пакетом и уберите в холодильник. Так петрушка и кинза останутся свежими до двух недель.</p>
+            </div>
+
+            <div class="tip-card">
+                <h3>Спасение пересоленного супа</h3>
+                <p>Если суп пересолен, опустите в него очищенную сырую картофелину или горсть риса в марлевом мешочке и проварите 10–15 минут. Они впитают в себя излишки соли. Также баланс можно исправить каплей лимонного сока или сахара.</p>
+            </div>
+        </section>
+
+        <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1rem; text-align: left;">
+            <a href="index.html" class="back-link">← На главную</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
