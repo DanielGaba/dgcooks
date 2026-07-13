@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулинарная Книга / Главная</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --text-color: #332d29;
+            --accent-color: #bc6c25;
+            --accent-light: #dda15e;
+            --card-bg: #ffffff;
+            --border-color: #e6dfd5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Кнопки переключения языков вверху страницы */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background-color: var(--bg-color);
+            border-color: var(--accent-light);
+        }
+
+        .category-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 32px;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            border-bottom: 3px solid var(--accent-light);
+        }
+
+        /* Элементы управления для разных языков */
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #555;
+        }
+
+        /* Стили кнопок-ссылок на разделы */
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu-link {
+            display: block;
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-light);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .menu-link:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(188, 108, 37, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('he')">HE</button>
+        </div>
+
+        <div id="content-ru" class="lang-section">
+            <span class="category-badge">ДОМАШНЯЯ КУЛИНАРИЯ</span>
+            <h1>Моя Кулинарная Книга</h1>
+            <p class="welcome-text">Добро пожаловать! Выберите интересующий вас раздел, чтобы посмотреть рецепты.</p>
+            <div class="menu-grid">
+                <a href="bakery.html" class="menu-link" onclick="navigate(event, 'bakery.html')">🍞 Выпечка и Хлеб</a>
+                <a href="salads.html" class="menu-link" onclick="navigate(event, 'salads.html')">🥗 Салаты</a>
+            </div>
+        </div>
+
+        <div id="content-en" class="lang-section">
+            <span class="category-badge">HOME COOKING</span>
+            <h1>My Cookbook</h1>
+            <p class="welcome-text">Welcome! Choose a category below to explore the recipes.</p>
+            <div class="menu-grid">
+                <a href="en-bakery.html" class="menu-link" onclick="navigate(event, 'bakery.html')">🍞 Baking & Bread</a>
+                <a href="en-salads.html" class="menu-link" onclick="navigate(event, 'salads.html')">🥗 Salads</a>
+            </div>
+        </div>
+
+        <div id="content-he" class="lang-section" dir="rtl">
+            <span class="category-badge">בישול ביתי</span>
+            <h1>ספר הבישול שלי</h1>
+            <p class="welcome-text">ברוכים הבאים! בחרו קטגוריה כדי לראות את המתכונים.</p>
+            <div class="menu-grid">
+                <a href="he-bakery.html" class="menu-link" onclick="navigate(event, 'bakery.html')">🍞 מאפים ולחם</a>
+                <a href="he-salads.html" class="menu-link" onclick="navigate(event, 'salads.html')">🥗 סלטים</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функция установки языка
+        function setLanguage(lang) {
+            // Сохраняем выбор в localStorage
+            localStorage.setItem('selectedLanguage', lang);
+
+            // Скрываем все языковые секции и деактивируем кнопки
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+
+            // Показываем нужную секцию
+            const activeSection = document.getElementById(`content-${lang}`);
+            if (activeSection) activeSection.classList.add('active');
+
+            // Подсвечиваем активную кнопку
+            const btnIndex = { 'ru': 0, 'en': 1, 'he': 2 };
+            document.querySelectorAll('.lang-btn')[btnIndex[lang]].classList.add('active');
+        }
+
+        // Умный переход по ссылкам с учетом сохраненного языка
+        function navigate(event, basePage) {
+            event.preventDefault(); // Останавливаем обычный переход
+            const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
+            
+            if (currentLang === 'ru') {
+                window.location.href = basePage; // bakery.html
+            } else {
+                window.location.href = `${currentLang}-${basePage}`; // en-bakery.html или he-bakery.html
+            }
+        }
+
+        // При загрузке страницы проверяем, какой язык был выбран ранее
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выпечка и Хлеб</title>
+    <style>
+        body { font-family: sans-serif; background: #faf8f5; color: #332d29; padding: 30px 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; }
+        h1 { color: #bc6c25; border-bottom: 2px solid #e6dfd5; padding-bottom: 10px; margin-top: 10px; }
+        
+        /* Стили для переключателя языков */
+        .lang-switcher { position: absolute; top: 30px; right: 30px; display: flex; gap: 8px; font-size: 14px; }
+        .lang-switcher a { color: #7d7065; font-size: 14px; font-weight: normal; text-decoration: none; padding: 2px 6px; border-radius: 4px; }
+        .lang-switcher a.active { color: white; background: #bc6c25; font-weight: bold; }
+        .lang-switcher a:hover:not(.active) { text-decoration: underline; }
+
+        ul { list-style: none; padding: 0; }
+        li { margin: 15px 0; }
+        a { color: #bc6c25; font-size: 18px; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-top: 20px; color: #7d7065; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <a href="bakery.html" class="active">RU</a>
+            <a href="en-bakery.html">EN</a>
+            <a href="he-bakery.html">HE</a>
+        </div>
+
+        <h1>🍞 Рецепты выпечки</h1>
+        <ul>
+            <li><a href="honey-bread.html">Полуржаной экспресс-хлеб на меду с семечками →</a></li>
+            <li><a href="burger-buns.html">Ультрамягкие булочки для бургеров (Без яиц, без замеса) →</a></li>
+        </ul>
+    </div>
+    <a href="index.html" id="back-to-main">← На главную</a>
+
+<script>
+    // Если на внутренней странице тоже есть кнопки смены языка, мы можем их обновлять:
+    function changeLanguageOnSubpage(lang) {
+        localStorage.setItem('selectedLanguage', lang);
+        
+        // Перенаправляем на соответствующую языковую версию этой же страницы
+        // Например, если мы на bakery.html и выбрали 'en' -> редирект на en-bakery.html
+        let currentFile = window.location.pathname.split("/").pop();
+        
+        // Очищаем префиксы en- или he-, если они есть
+        let baseFile = currentFile.replace(/^(en-|he-)/, '');
+        
+        if (lang === 'ru') {
+            window.location.href = baseFile;
+        } else {
+            window.location.href = lang + '-' + baseFile;
+        }
+    }
+</script>
+</body>
+</html>
